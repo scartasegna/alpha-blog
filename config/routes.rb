@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :articles, only: [:show]
+  resources :articles, only: [:show, :index, :new, :create, :edit, :update] 
   root 'pages#home'
 end
