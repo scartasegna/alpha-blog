@@ -1,7 +1,10 @@
-<h1>This is the Home page</h1>
 
-<p>
- <%= link_to 'Atricles list', articles_path %> |
- <%= link_to 'New Article', new_article_path %>
-
-</p>
+<div class="container" id="home-container">
+    <div class="p-5 mb-4 bg-light rounded-3" id="jumbo-home">
+        <div class="container-fluid py-5 text-white">
+            <h1 class="display-5 fw-bold text-center">Alpha blog</h1>
+            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+            <button class="btn btn-primary btn-lg" type="button" href=articles_path>Sing up</button>
+        </div>
+    </div>
+</div>

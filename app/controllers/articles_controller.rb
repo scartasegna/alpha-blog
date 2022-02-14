@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
-
+  
   def new
     @article = Article.new
   end
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def update
     if (@article.update(article_params))
-      flash[:notice] = "updated!"
+      flash[:notice] = "Article updated!!"
       redirect_to @article
     else
       render 'edit'

@@ -1,18 +1,24 @@
-<h1>Showing article details</h1>
 
-<p id="notice"><%= notice %></p>
+<div class="conteiner">
+   <h2 class="text-center mt-4"> <%= @article.title%> </h2>
+   <div class="row justify-content-md-center ">
+      <div class="col-8 mt-4">
+         <div class="card text-center shadow">
+            <div class="card-header">
+            created by
+            </div>
+            <div class="card-body">
+               
+               <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+               <hr>
+               <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-success"%>
+               <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "are you sure?"},class: "btn btn-outline-danger" %>
+            </div>
+            <div class="card-footer text-muted">
+               <small>Created <%= time_ago_in_words(@article.created_at) %> ago by </small>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @article.description %>
-</p>
-
- <p><%= link_to 'Edit', edit_article_path(@article) %>  | 
-    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "are you sure?"} %> | 
-    <%= link_to 'Back to list', articles_path %> </p>
-  

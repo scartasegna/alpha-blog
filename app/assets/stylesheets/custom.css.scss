@@ -1,0 +1,40 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+  background-color: #7B96F7 !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #5E6375;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container{
+  margin-top: 25px;
+}
+
+#jumbo-home{
+  background-image: asset-url('cover1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content{
+  background-color: lightgray;
+  flex: 1 0 auto;
+}
