@@ -1,6 +1,6 @@
 <%= form_with(model: @article) do |form| %>
 <div class="container mt-3 ">
- <%= render 'shared/errors' %>
+ <%= render 'shared/errors' , obj: @article%>
  <div class="input-group m-1">   
    <%= form.label :title, class:"input-group-text"  %>
    <%= form.text_field :title, class:"form-control", placeholder:"Title for article" %>
