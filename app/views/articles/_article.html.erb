@@ -1,0 +1,23 @@
+<div class="conteiner">
+    <% @articles.each do |article| %>
+        <div class="row justify-content-md-center ">
+          <div class="col-8 mt-4">  
+              <div class="card text-center shadow"> 
+                    <div class= "card-header font-italic">
+                      by <%= article.user.username %>
+                    </div>                 
+                    <div class="card-body">
+                      <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+                      <p class="card-text"><%= truncate(article.description, lenght: 50)%></p>
+                      <%= link_to 'Show', article_path(article), class: "btn btn-outline-primary"%>
+                      <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-success"%>
+                      <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "are you sure?"},class: "btn btn-outline-danger" %>
+                    </div>
+                    <div class="card-footer text-muted">
+                     <small>Created <%= time_ago_in_words(article.created_at) %> ago by </small>
+                    </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+</div>
