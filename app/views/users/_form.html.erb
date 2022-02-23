@@ -18,7 +18,7 @@
 
   <div class="input-group m-1 gap-2">
     <div class="actions">
-      <%= form.submit class:"btn btn-primary" %>
+      <%= form.submit(@user.new_record? ? "Sing up" : "Update Profile", class:"btn btn-primary") %>
     </div>  
   </div>
 </div>
