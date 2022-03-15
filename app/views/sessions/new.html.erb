@@ -1,0 +1,24 @@
+<h1 class="text-center mt-4">Log up for Alpha Blog</h1>
+
+<%= form_with(scope: :session, url: login_path) do |form| %>
+<div class="container mt-3 ">
+  <div class="input-group m-1">   
+   <%= form.label :email, class:"input-group-text"  %>
+   <%= form.email_field :email, class:"form-control", placeholder:"Your email" %>
+ </div>
+
+  <div class="input-group m-1">
+    <%= form.label :password, class:"input-group-text" %>
+    <%= form.password_field :password, class:"form-control", placeholder:"enter your password" %>
+  </div>
+
+  <div class="input-group m-1 gap-2">
+    <div class="actions">
+      <%= form.submit "Log in", class:"btn btn-primary" %>
+    </div>  
+  </div>
+</div>
+<% end %>
+<div class="d-grid gap-2">
+    <%= link_to '[Cancel and go back to the article list]', articles_path, class: "btn btn-outline-dark" %>
+</div>

@@ -15,13 +15,41 @@
                 </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><%= link_to 'Article List', articles_path, class: "dropdown-item" %></li>
-                    <li><%= link_to 'New article', new_article_path,class: "dropdown-item" %> </li>
-                    <li><hr class="dropdown-divider"></li>
+                    <% if logged_in? %>
+                        <li><hr class="dropdown-divider"></li> 
+                        <li><%= link_to 'New article', new_article_path,class: "dropdown-item" %> </li>
+                    <%end%>
+                    
                 </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li>
+           
+            <% if logged_in? %>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile <%= current_user.username %>
+                </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="nav-item">
+                            <%= link_to 'Log out', login_path, class: "nav-link active", method: :delete %></li>
+                        </li>
+                        <li><hr class="dropdown-divider"></li> 
+                        <li class="nav-item">
+                            <%= link_to "View your profile", user_path(current_user), class: "nav-link active" %></li>
+                            <%= link_to "Edit your profile", edit_user_path(current_user), class: "nav-link active" %></li>
+                            <hr class="dropdown-divider">
+                            <%= link_to "Delete your profile", user_path(current_user), class: "nav-link active text-danger", method: :delete, data: {confirm: "Are you sure?"} %></li>
+                        </li>
+                    </ul>
+                </li>
+                
+            <%else%>
+                <li class="nav-item">
+                    <%= link_to 'Log in', login_path, class: "nav-link active" %></li>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Sing in', signup_path, class: "nav-link active" %></li>
+                </li>
+            <%end%>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
