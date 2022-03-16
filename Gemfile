@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 #add pagination
 gem 'will_paginate', '~> 3.3'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -46,6 +47,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  ### Add solagraph
+  gem 'solargraph'
 end
 
 group :test do
