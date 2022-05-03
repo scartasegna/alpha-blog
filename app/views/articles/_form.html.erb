@@ -11,11 +11,20 @@
     <%= form.text_area :description, rows:10, class:"form-control",placeholder:"The info of the article"  %>
   </div>
 
+  <div class="input-group m-1">
+    <%= form.label :category, class:"input-group-text" %>
+    <%= form.collection_select(:category_ids, Category.all, :id, :name, 
+                              {prompt: "Select from the list below (can be empty)"} ,{multiple: true, class: "form-select form-control"} ) %>
+    
+   
+  </div>
+
   <div class="input-group m-1 gap-2">
     <div class="actions">
       <%= form.submit class:"btn btn-primary" %>
     </div>  
   </div>
+
 </div>
 <% end %>
 <div class="d-grid gap-2">
