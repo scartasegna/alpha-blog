@@ -1,0 +1,16 @@
+<%= render 'shared/errors', obj: @category %>
+<%= form_with(model: @category) do |form| %>
+<div class="container mt-3 ">
+ <div class="input-group m-1">   
+   <%= form.label :name, "Category Name", class:"input-group-text"  %>
+   <%= form.text_field :name, class:"form-control", placeholder:"Category name here" %>
+ </div>
+
+  <div class="input-group m-1 gap-2">
+    <div class="actions">
+      <%= form.submit class:"btn btn-primary" %>
+    </div>  
+  </div>
+</div>
+<% end %>
+

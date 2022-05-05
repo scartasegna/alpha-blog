@@ -1,0 +1,9 @@
+<h1 class="text-center mt-4">Editing a category <b> <%= @category.name %> </b> </h1>
+
+<div class = "container" >
+  <%= render 'form' %>
+</div>
+
+<div class="d-grid gap-2">
+    <%= link_to '[Cancel and go back to the category]', category_path(@category), class: "btn btn-outline-dark" %>
+</div>
